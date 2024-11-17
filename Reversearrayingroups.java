@@ -9,6 +9,8 @@ public class Reversearrayingroups {
 
         int k = 7;
 
+    
+
         
         if(k>=arr.size()){
             rotate(arr, arr.size());
