@@ -1,6 +1,7 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.Stack;
 
-public class Test {
+public class SympifyPath {
 
     public static void main(String[] args) {
 
@@ -33,5 +34,4 @@ public class Test {
         return "";
 
     }
-
 }
