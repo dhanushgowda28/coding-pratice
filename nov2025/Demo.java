@@ -1,27 +1,43 @@
-import java.util.*;
+import java.util.List;
+import java.util.ArrayList;
 
-public class Demo{
+public class Demo {
 
-    public int res = 0;
+    public static void main(String[] args) {
+         double b = 5.9 ;
+         System.out.println((int) (b));
 
-    public static void main(String[] args){
-       int[] nums = {3,1,4,2}; int p = 6;
+        int[] nums = { 3, 1, 4, 2 };
+        int p = 6;
 
-       List<List<Integer>> res = new ArrayList<>();
-       subSeqArray(nums,0,new ArrayList<>(),res);
-       for(List<Integer> i : res)
-          System.out.println(i);
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
+        subSeqArray(nums, 0, list, res, 0, p);
+        System.out.println(list);
+        for (List<Integer> i : res)
+            System.out.println(i);
     }
-    
-   
-    public static void subSeqArray(int[] nums, int i, List<Integer> list,List<List<Integer>> res){
-        if(i== nums.length){
-            res.add(new ArrayList<>(list));
-        }    
+
+    public static boolean subSeqArray(int[] nums, int i, List<Integer> list, List<List<Integer>> res, int temp,
+            int sum) {
+        if (i == nums.length) {
+            if (sum == temp) {
+                return true;
+            }
+            return false;
+        }
+
         list.add(nums[i]);
-        subSeqArray(nums,i+1,list,res);
-        list.remove(list.size()-1);
-        subSeqArray(nums,i+1,list,res);   
+        temp+=nums[i];
+        if (true == subSeqArray(nums, i + 1, list, res, temp, sum))
+            return true;
+
+        list.remove(list.size() - 1);
+        temp-=nums[i];
+        if (true == subSeqArray(nums, i + 1, list, res, temp, sum))
+            return true;
+
+        return false;
     }
 
 }

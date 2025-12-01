@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class OonTwoBitChar {
 
     public static void main(String[] args){
@@ -5,6 +8,7 @@ public class OonTwoBitChar {
 		int[] str2 = {1,0,1,0};
 		System.out.println(isOneBitCharacter(str1));
 		System.out.println(isOneBitCharacter(str2));
+		List<Integer> list = new ArrayList<>();
 	}
 	
 	public static boolean isOneBitCharacter(int[] nums){
